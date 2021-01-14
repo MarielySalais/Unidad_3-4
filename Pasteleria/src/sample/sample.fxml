@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane fx:id="clientes" layoutX="200.0" layoutY="30.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #DDBCC5;">
+         <children>
+            <Label layoutX="10.0" layoutY="20.0" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="67.0" text="Nombre:">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="140.0" prefHeight="20.0" text="Direccion:">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="201.0" prefHeight="20.0" text="Enterga a domicilio">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tabla_clientes" layoutX="170.0" layoutY="20.0" prefHeight="430.0" prefWidth="610.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Label layoutX="10.0" layoutY="320.0" prefHeight="20.0" text="ID">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cl_txt_id" layoutX="10.0" layoutY="340.0" prefHeight="30.0">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Button fx:id="cl_bt_agregar" layoutX="55.0" layoutY="270.0" mnemonicParsing="false" onAction="#bt_cl_agregar" prefHeight="30.0" prefWidth="60.0" style="-fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-border-width: 2; -fx-background-radius: 50; -fx-background-color: #A6FDFF;" text="Agregar">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="cl_bt_eliminar" layoutX="55.0" layoutY="380.0" maxHeight="30.0" minHeight="25.0" mnemonicParsing="false" onAction="#bt_cl_eliminar" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-background-color: #A6FDFF; -fx-border-width: 1;" text="Eliminar">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="10.0" layoutY="80.0" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="83.0" text="Telefono:">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="cl_rb_si" layoutX="10.0" layoutY="227.0" mnemonicParsing="false" text="Si" />
+            <RadioButton fx:id="cl_rb_no" layoutX="96.0" layoutY="227.0" mnemonicParsing="false" text="No" />
+            <TextField fx:id="cl_txt_nombre" layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="150.0" />
+            <TextField fx:id="cl_txt_telefono" layoutX="10.0" layoutY="100.0" prefHeight="30.0" prefWidth="150.0" />
+            <TextField fx:id="cl_txt_direccion" layoutX="10.0" layoutY="160.0" prefHeight="30.0" prefWidth="150.0" />
+            <Button fx:id="cl_bt_vaciar" layoutX="55.0" layoutY="420.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#bt_cl_vaciar" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #FA98D6; -fx-background-color: #F1B5E1; -fx-border-width: 2;" text="Vaciar">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pastel" layoutX="200.0" layoutY="30.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #fcccd4;">
+         <children>
+            <Separator layoutX="169.0" layoutY="320.0" orientation="VERTICAL" prefHeight="150.0" prefWidth="6.0" />
+            <Separator layoutX="690.0" layoutY="320.0" orientation="VERTICAL" prefHeight="150.0" prefWidth="6.0" />
+            <Label layoutX="10.0" layoutY="20.0" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="35.0" text="Pisos">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="140.0" prefHeight="20.0" text="Sabor">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="200.0" prefHeight="20.0" text="Relleno">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="pas_cb_relleno" layoutX="10.0" layoutY="220.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+            <Label layoutX="10.0" layoutY="320.0" prefHeight="20.0" text="Diseño">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pas_txt_disenio" layoutX="10.0" layoutY="340.0" prefHeight="30.0">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Button fx:id="pas_bt_generar" alignment="CENTER" layoutX="400.0" layoutY="380.0" mnemonicParsing="false" onAction="#bt_pas_generar" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 50; -fx-border-color: #FA98D6; -fx-border-radius: 50; -fx-background-color: #F1B5E1; -fx-border-width: 2;" text="Generar">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TableView fx:id="pas_tabla" layoutX="170.0" layoutY="20.0" prefHeight="300.0" prefWidth="620.0" style="-fx-background-color: #ffffff;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <ComboBox fx:id="pas_cb_sabor" layoutX="10.0" layoutY="160.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+            <ComboBox fx:id="pas_cb_pisos" layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+            <Label layoutX="10.0" layoutY="380.0" prefHeight="20.0" text="Precio">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pas_txt_precio" editable="false" layoutX="10.0" layoutY="400.0" prefHeight="30.0">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Button fx:id="pas_bt_agregar" layoutX="90.0" layoutY="435.0" mnemonicParsing="false" onAction="#bt_pas_agregar" prefHeight="30.0" prefWidth="60.0" style="-fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-border-width: 2; -fx-background-radius: 50; -fx-background-color: #A6FDFF;" text="Agregar">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextField fx:id="pas_txt_id" layoutX="700.0" layoutY="365.0" prefHeight="30.0" prefWidth="90.0">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Button fx:id="pas_bt_eliminar" layoutX="715.0" layoutY="405.0" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" onAction="#bt_pas_eliminar" prefHeight="25.0" prefWidth="60.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-background-color: #A6FDFF; -fx-border-width: 1;" text="Eliminar">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="210.0" layoutY="365.0" prefHeight="15.0" prefWidth="40.0" text="Cliente">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="pas_cb_cliente" layoutX="210.0" layoutY="380.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+            <TextField fx:id="pas_txt_total" editable="false" layoutX="500.0" layoutY="380.0" prefHeight="30.0" prefWidth="150.0">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="500.0" layoutY="365.0" prefHeight="15.0" prefWidth="40.0" text="Total">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="737.0" layoutY="340.0" prefHeight="15.0" prefWidth="15.0" text="ID">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="80.0" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="83.0" text="Tipo de piso">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="pas_cb_TipodePiso" layoutX="10.0" layoutY="100.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+            <Label layoutX="10.0" layoutY="260.0" prefHeight="20.0" text="Figura">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="pas_cb_figura" layoutX="10.0" layoutY="280.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+            <Button fx:id="pas_bt_precio" layoutX="20.0" layoutY="435.0" mnemonicParsing="false" onAction="#bt_pas_precio" prefHeight="30.0" prefWidth="60.0" style="-fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-border-width: 2; -fx-background-radius: 50; -fx-background-color: #A6FDFF;" text="Precio">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="pas_bt_vaciar" layoutX="715.0" layoutY="440.0" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" onAction="#bt_pas_vaciar" prefHeight="25.0" prefWidth="60.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #FA98D6; -fx-background-color: #F1B5E1; -fx-border-width: 2;" text="Vaciar">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pedidos" layoutX="200.0" layoutY="30.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Button layoutX="525.0" layoutY="10.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#bt_ped_fpastel" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #FA98D6; -fx-background-color: #F1B5E1; -fx-border-width: 2;" text="Finalizar Pastel">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ListView fx:id="lv_pedidos" layoutY="50.0" prefHeight="420.0" prefWidth="150.0" />
+            <TableView fx:id="ped_tabla_pt" layoutX="150.0" layoutY="120.0" prefHeight="350.0" prefWidth="650.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Separator layoutX="150.0" layoutY="50.0" prefWidth="650.0" />
+            <Button layoutX="380.0" layoutY="10.0" mnemonicParsing="false" onAction="#bt_ped_pr" prefHeight="30.0" prefWidth="120.0" style="-fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-border-width: 2; -fx-background-radius: 50; -fx-background-color: #A6FDFF;" text="Pasteles Restantes">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="200.0" layoutY="10.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#bt_ped_fpedido" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #FA98D6; -fx-background-color: #F1B5E1; -fx-border-width: 2;" text="Finalizar Pedido">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="650.0" layoutY="10.0" mnemonicParsing="false" onAction="#bt_ped_pt" prefHeight="30.0" prefWidth="120.0" style="-fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-border-width: 2; -fx-background-radius: 50; -fx-background-color: #A6FDFF;" text="Pasteles Terminados">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Separator layoutX="349.0" orientation="VERTICAL" prefHeight="50.0" />
+            <TableView fx:id="ped_tabla_pr" layoutX="150.0" layoutY="120.0" prefHeight="350.0" prefWidth="650.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="ped_tabla_clientes" layoutX="150.0" layoutY="50.0" prefHeight="70.0" prefWidth="650.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TextField fx:id="ped_txt_total" editable="false" layoutY="20.0" prefHeight="30.0" prefWidth="150.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="150.0" text="TOTAL" textAlignment="CENTER">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="149.0" orientation="VERTICAL" prefHeight="50.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="inicio" layoutX="200.0" layoutY="30.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #F1B5E1;">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="100.0" layoutY="35.0" pickOnBounds="true" smooth="false" x="10.0">
+               <image>
+                  <Image url="@Imagenes/pastelitopasteln.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="800.0" text="Sugerencias de pasteles" textAlignment="CENTER">
+               <font>
+                  <Font name="AR BONNIE" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="30.0" prefHeight="470.0" prefWidth="200.0" style="-fx-background-color: #FA98D6;">
+         <children>
+            <ImageView fitHeight="470.0" fitWidth="200.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../sample/Imagenes/fondo%20pastel.jpg" />
+               </image></ImageView>
+            <Button fx:id="inicio_bt" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#bt_inicio" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #A1EFF1; -fx-background-radius: 50; -fx-border-radius: 50;" text="Inicio" textAlignment="CENTER" textFill="#0a0a0a">
+               <padding>
+                  <Insets bottom="5.0" left="45.0" right="40.0" top="4.0" />
+               </padding>
+               <font>
+                  <Font name="Gigi" size="19.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#00a1ff" height="15.06" radius="8.5125" spread="0.02" width="20.99" />
+               </effect>
+            </Button>
+            <Button fx:id="pedido_bt" alignment="CENTER" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#bt_pedidos" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #A1EFF1; -fx-background-radius: 50; -fx-border-radius: 50;" text="Pedido">
+               <font>
+                  <Font name="Gigi" size="19.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="45.0" right="40.0" top="4.0" />
+               </padding>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#00a1ff" height="15.06" radius="8.5125" spread="0.02" width="20.99" />
+               </effect>
+            </Button>
+            <Button fx:id="orden_bt" alignment="CENTER" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onAction="#bt_orden" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #A1EFF1; -fx-background-radius: 50; -fx-border-radius: 50;" text="Pastel">
+               <padding>
+                  <Insets bottom="5.0" left="45.0" right="40.0" top="4.0" />
+               </padding>
+               <font>
+                  <Font name="Gigi" size="19.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#00a1ff" height="15.06" radius="8.5125" spread="0.02" width="20.99" />
+               </effect>
+            </Button>
+            <Button fx:id="clientes_bt" alignment="CENTER" layoutX="10.0" layoutY="290.0" mnemonicParsing="false" onAction="#bt_clientes" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #A1EFF1; -fx-background-radius: 50; -fx-border-radius: 50;" text="Cliente">
+               <font>
+                  <Font name="Gigi" size="19.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#00a1ff" height="15.06" radius="8.5125" spread="0.02" width="20.99" />
+               </effect>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" radius="12.965" width="32.86" />
+         </effect>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="1000.0" style="-fx-background-color: #A6FDFF;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Button fx:id="close" alignment="CENTER" contentDisplay="CENTER" layoutX="970.0" mnemonicParsing="false" onAction="#bt_close" opacity="0.83" prefHeight="29.0" prefWidth="30.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #FFFFFF;" text="X" textAlignment="CENTER" textFill="RED" />
+            <Button fx:id="minimizar" alignment="CENTER" contentDisplay="CENTER" layoutX="940.0" mnemonicParsing="false" onAction="#bt_minimizar" opacity="0.83" prefHeight="29.0" prefWidth="30.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #FFFFFF;" text="--" textAlignment="CENTER" textFill="RED" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
