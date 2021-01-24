@@ -92,6 +92,81 @@
             </Button>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="inicio" layoutX="200.0" layoutY="30.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #F1B5E1;">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="100.0" layoutY="35.0" pickOnBounds="true" smooth="false" x="10.0">
+               <image>
+                  <Image url="@Imagenes/pastelitopasteln.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="800.0" text="Sugerencias de pasteles" textAlignment="CENTER">
+               <font>
+                  <Font name="AR BONNIE" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pedidos" layoutX="200.0" layoutY="30.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Button layoutX="525.0" layoutY="10.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#bt_ped_fpastel" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #FA98D6; -fx-background-color: #F1B5E1; -fx-border-width: 2;" text="Finalizar Pastel">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ListView fx:id="lv_pedidos" layoutY="50.0" prefHeight="420.0" prefWidth="150.0" />
+            <TableView fx:id="ped_tabla_pt" layoutX="150.0" layoutY="120.0" prefHeight="350.0" prefWidth="650.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Separator layoutX="150.0" layoutY="50.0" prefWidth="650.0" />
+            <Button layoutX="380.0" layoutY="10.0" mnemonicParsing="false" onAction="#bt_ped_pr" prefHeight="30.0" prefWidth="120.0" style="-fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-border-width: 2; -fx-background-radius: 50; -fx-background-color: #A6FDFF;" text="Pasteles Restantes">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="200.0" layoutY="10.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#bt_ped_fpedido" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #FA98D6; -fx-background-color: #F1B5E1; -fx-border-width: 2;" text="Finalizar Pedido">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="650.0" layoutY="10.0" mnemonicParsing="false" onAction="#bt_ped_pt" prefHeight="30.0" prefWidth="120.0" style="-fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-border-width: 2; -fx-background-radius: 50; -fx-background-color: #A6FDFF;" text="Pasteles Terminados">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Separator layoutX="349.0" orientation="VERTICAL" prefHeight="50.0" />
+            <TableView fx:id="ped_tabla_pr" layoutX="150.0" layoutY="120.0" prefHeight="350.0" prefWidth="650.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="ped_tabla_clientes" layoutX="150.0" layoutY="50.0" prefHeight="70.0" prefWidth="650.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TextField fx:id="ped_txt_total" editable="false" layoutY="20.0" prefHeight="30.0" prefWidth="150.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="150.0" text="TOTAL" textAlignment="CENTER">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="149.0" orientation="VERTICAL" prefHeight="50.0" />
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="pastel" layoutX="200.0" layoutY="30.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #fcccd4;">
          <children>
             <Separator layoutX="169.0" layoutY="320.0" orientation="VERTICAL" prefHeight="150.0" prefWidth="6.0" />
@@ -232,11 +307,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="pedidos" layoutX="200.0" layoutY="30.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #ffffff;">
-         <children>
-            <Button layoutX="525.0" layoutY="10.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#bt_ped_fpastel" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #FA98D6; -fx-background-color: #F1B5E1; -fx-border-width: 2;" text="Finalizar Pastel">
+            <Button fx:id="pas_bt_ordid" alignment="CENTER" layoutX="360.0" layoutY="343.0" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" onAction="#bt_pas_orid" prefHeight="25.0" prefWidth="60.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-background-color: #A6FDFF; -fx-border-width: 1;" text="ID">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
@@ -244,69 +315,23 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <ListView fx:id="lv_pedidos" layoutY="50.0" prefHeight="420.0" prefWidth="150.0" />
-            <TableView fx:id="ped_tabla_pt" layoutX="150.0" layoutY="120.0" prefHeight="350.0" prefWidth="650.0">
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-            <Separator layoutX="150.0" layoutY="50.0" prefWidth="650.0" />
-            <Button layoutX="380.0" layoutY="10.0" mnemonicParsing="false" onAction="#bt_ped_pr" prefHeight="30.0" prefWidth="120.0" style="-fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-border-width: 2; -fx-background-radius: 50; -fx-background-color: #A6FDFF;" text="Pasteles Restantes">
+            <Button fx:id="pas_bt_ordprecio" alignment="CENTER" layoutX="440.0" layoutY="343.0" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" onAction="#bt_pas_ordprecio" prefHeight="25.0" prefWidth="60.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-background-color: #A6FDFF; -fx-border-width: 1;" text="PRECIO">
                <font>
-                  <Font name="Times New Roman" size="12.0" />
+                  <Font name="Times New Roman" size="11.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="200.0" layoutY="10.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#bt_ped_fpedido" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #FA98D6; -fx-background-color: #F1B5E1; -fx-border-width: 2;" text="Finalizar Pedido">
-               <font>
-                  <Font name="Times New Roman" size="12.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutX="650.0" layoutY="10.0" mnemonicParsing="false" onAction="#bt_ped_pt" prefHeight="30.0" prefWidth="120.0" style="-fx-border-radius: 50; -fx-border-color: #A1EFF1; -fx-border-width: 2; -fx-background-radius: 50; -fx-background-color: #A6FDFF;" text="Pasteles Terminados">
-               <font>
-                  <Font name="Times New Roman" size="12.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Separator layoutX="349.0" orientation="VERTICAL" prefHeight="50.0" />
-            <TableView fx:id="ped_tabla_pr" layoutX="150.0" layoutY="120.0" prefHeight="350.0" prefWidth="650.0">
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-            <TableView fx:id="ped_tabla_clientes" layoutX="150.0" layoutY="50.0" prefHeight="70.0" prefWidth="650.0">
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-            <TextField fx:id="ped_txt_total" editable="false" layoutY="20.0" prefHeight="30.0" prefWidth="150.0" />
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="150.0" text="TOTAL" textAlignment="CENTER">
-               <font>
-                  <Font name="Times New Roman Bold" size="12.0" />
-               </font>
-            </Label>
-            <Separator layoutX="149.0" orientation="VERTICAL" prefHeight="50.0" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="inicio" layoutX="200.0" layoutY="30.0" prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #ffffff;">
-         <children>
-            <ImageView fitHeight="318.0" fitWidth="564.0" layoutX="98.0" layoutY="36.0" pickOnBounds="true" smooth="false" x="10.0">
-               <image>
-                  <Image url="@Imagenes/pastelitopasteln.png" />
-               </image>
-            </ImageView>
-            <Label text="Sugerencias de pasteles">
-               <font>
-                  <Font name="AR BONNIE" size="24.0" />
-               </font>
-            </Label>
+            <AnchorPane layoutX="360.0" layoutY="323.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="138.0" text="ORDENAR POR:">
+                     <font>
+                        <Font name="Times New Roman Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane layoutY="30.0" prefHeight="470.0" prefWidth="200.0" style="-fx-background-color: #FA98D6;">

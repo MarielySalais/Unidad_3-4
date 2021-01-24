@@ -55,7 +55,7 @@ public class Controller {
 
     int id_pastel=1;
     //Panel Pastel
-    @FXML Button pas_bt_agregar,pas_bt_generar,pas_bt_eliminar,pas_bt_vaciar;
+    @FXML Button pas_bt_agregar,pas_bt_generar,pas_bt_eliminar,pas_bt_vaciar,pas_bt_ordid,pas_bt_ordprecio;
     @FXML ComboBox pas_cb_pisos,pas_cb_TipodePiso,pas_cb_sabor,pas_cb_relleno,pas_cb_figura,pas_cb_cliente;
     @FXML TableView pas_tabla;
     @FXML TextField pas_txt_disenio,pas_txt_precio,pas_txt_total,pas_txt_id;
@@ -275,13 +275,22 @@ public class Controller {
 
     }
     public void bt_pas_eliminar(){
-        int gid;
-        gid=Integer.parseInt(pas_txt_id.getText());
-        for (int i=0;i<listaPastel.size();i++){
-            if (gid==listaPastel.get(i).getID()){
-                listaPastel.remove(i);
-                break;
+        quicksort(listaPastel,0,listaPastel.size()-1);
+        int id_buscado=Integer.parseInt(pas_txt_id.getText());
+        int mitad, inferior = 0;
+        int superior = listaPastel.size()-1;
+
+        do {
+            mitad = (inferior + superior) / 2;
+            if (id_buscado > listaPastel.get(mitad).getID()) {
+                inferior = mitad + 1;
+            } else {
+                superior = mitad - 1;
             }
+        } while (listaPastel.get(mitad).getID() != id_buscado && inferior <= superior);
+
+        if (listaPastel.get(mitad).getID() == id_buscado) {
+            listaPastel.remove(mitad);
         }
     }
     public void bt_pas_vaciar(){
@@ -301,6 +310,45 @@ public class Controller {
         Pastel pastel=new Pastel(0,Pisos,TipodePiso,Sabor,Relleno,Figura,Disenio,0);
         pastel.calcular_precio();
         pas_txt_precio.setText(pastel.getPrecio()+"");
+    }
+    public void bt_pas_ordprecio(){
+        int i, j;
+        Pastel pastel;
+        for(i=0;i<listaPastel.size()-1;i++)
+            for(j=0;j<listaPastel.size()-i-1;j++)
+                if(listaPastel.get(j+1).getPrecio()<listaPastel.get(j).getPrecio()){
+                    pastel=listaPastel.get(j+1);
+                    listaPastel.set(j+1,listaPastel.get(j));
+                    listaPastel.set(j,pastel);
+                }
+    }
+    public void bt_pas_orid(){
+        quicksort(listaPastel,0,listaPastel.size()-1);
+    }
+    public void quicksort(ObservableList<Pastel> listaPastel,int primero, int ultimo){
+        int i, j, central;
+        int pivote;
+        central = (primero + ultimo)/2;
+        pivote = listaPastel.get(central).getID();
+        i = primero;
+        j = ultimo;
+        do {
+            while (listaPastel.get(i).getID() < pivote) i++;
+            while (listaPastel.get(j).getID() > pivote) j--;
+            if (i <= j)
+            {
+                Pastel pastel;
+                pastel = listaPastel.get(i);
+                listaPastel.set(i,listaPastel.get(j));
+                listaPastel.set(j,pastel);
+                i++;
+                j--;
+            }
+        }while (i <= j);
+        if (primero < j)
+            quicksort(listaPastel, primero, j);
+        if (i < ultimo)
+            quicksort(listaPastel, i, ultimo);
     }
     //Accion de botones de clientes
 
